@@ -58,14 +58,20 @@ A = M * N+N
 B = N.T * M
 C = P.I + P
 #  AC(C+B) return an error because the matrix space of C and B are different (2,2) and (2,3)
-
+EigM = np.linalg.eigh(M)
+#EigN = np.linalg.eigh(N) error, You can only calculate the eigenvectors and eigenmatrix if the matrix is a square
+EigP = np.linalg.eigh(P)
 
 ansMatri['A'] = A
 ansMatri['B'] = B
 ansMatri['C'] = C
+ansMatri['EigM'] = EigM
+#ansMatri['EigN'] = EigN
+ansMatri['EigP'] = EigP
 
 
 printDic(initVec, 'initial vectors')
 printDic(answers, 'cal answers')
 printDic(initMatri, 'initial matrices', True)
 printDic(ansMatri, 'answer matrices', True)
+
