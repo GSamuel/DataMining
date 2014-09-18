@@ -25,5 +25,11 @@ for row_index in range(2,sheet.nrows):
     row = np.array(sheet.row_values(row_index,3))
     array[row_index-2] = row
 
-print array[:,:2]
+x = array[:,0:1]
+y = array[:,1:2]
+
+
+scatter(x,y)
+title('Woopdiedoo')
+show()
 
